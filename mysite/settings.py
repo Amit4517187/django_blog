@@ -24,10 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mij&-$hray)ota%x*71k$k_5lrp^ccpf$$3o$@)imk_yi0eb+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.getenv('PROJECT_DOMAIN', 'localhost') + ".glitch.me"]
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'amitkmishraa.pythonanywhere.com', 'www.amitkmishraa.pythonanywhere.com', os.getenv('PROJECT_DOMAIN', 'localhost') + ".glitch.me"]
 
 # Application definition
 
