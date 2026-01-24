@@ -1,19 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Blog Posts</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-    <h1>Blog Posts</h1>
-    {% for post in posts %}
-        <div>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|truncatewords:50 }}</p>
-            <p><small>By {{ post.author }} on {{ post.published_date }}</small></p>
+    <header>
+        <div class="container">
+            <h1>Blog Posts</h1>
         </div>
-        <hr>
-    {% empty %}
-        <p>No posts yet.</p>
-    {% endfor %}
+    </header>
+    <div class="container">
+        <ul class="post-list">
+            {% for post in posts %}
+                <li class="post-item">
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p class="post-meta">By {{ post.author }} on {{ post.published_date }}</p>
+                    <p class="post-content">{{ post.text|truncatewords:50 }}</p>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="read-more">Read More →</a>
+                </li>
+            {% empty %}
+                <p>No posts yet.</p>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
