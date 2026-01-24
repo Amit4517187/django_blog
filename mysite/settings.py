@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mij&-$hray)ota%x*71k$k_5lrp^ccpf$$3o$@)imk_yi0eb+('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'amitkmishraa.pythonanywhere.com', 'www.amitkmishraa.pythonanywhere.com', os.getenv('PROJECT_DOMAIN', 'localhost') + ".glitch.me"]
 
@@ -116,3 +116,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
